@@ -70,6 +70,7 @@ public class LongRunningWork implements Work
     */
    public void run()
    {
+      System.out.println("Ima running!");
       try
       {
          start.await();
@@ -79,7 +80,11 @@ public class LongRunningWork implements Work
          e.printStackTrace();
       }
       threadId = Thread.currentThread().getId();
+      System.out.println("I completed!");
       postRun = true;
+      System.out.println("I postrunned!");
+      System.out.println("posTrun: " + this.postRun);
+      System.out.println("posTrun: " + this.hasPostRun());
       done.countDown(); 
    }
    

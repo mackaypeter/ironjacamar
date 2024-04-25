@@ -189,6 +189,7 @@ public class WorkManagerStartWorkTestCase
 
       workManager.startWork(work, WorkManager.IMMEDIATE, null, null);
 
+      System.out.println("TEST: postRun: " + work.hasPostRun());
       assertFalse(work.hasPostRun());
    }
 
